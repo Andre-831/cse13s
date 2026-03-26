@@ -1,0 +1,64 @@
+Question 1
+----------
+
+    Describe a "test plan" for the various implementations of calc.  Given
+    that a program cannot be tested on every possible input, what are three
+    examples of tests that are implied by the spec but not checked by
+    test_3_4.sh?
+
+
+Answer 1
+--------
+
+    (write your answer here)
+
+    My test plan is to check normal valid cases, boundaires, and error cases. 
+    test_3_4 only checks one normal valid case so theres more to be tested.
+
+        Three examples of tests I will check to follow spec are:
+
+        1. checking if we allow an optional leading sign '+' or '-'
+        2. Handling too many/too few input values
+        3. checking out of range values
+
+
+
+Question 2
+----------
+
+    You may have noticed that the spec says nothing about what to do if the
+    user supplies too many arguments at the command line.  (Unfortunately,
+    ambiguity in specifications is very common in practice and can be very
+    confusing for programmers.)
+
+    If you were asked to implement calc given this spec, you would be
+    forced to choose from among at least three interpretations of what calc
+    would do when called as, say, 
+
+        ./calc 3 4 5
+
+    1. Calc should sum all of the arguments (and print 12).
+
+    2. Calc should ignore the third argument (and print 7).
+
+    3. Calc should print an error message and return non-zero.
+
+    Below, state whether your test scripts check what calc does when given
+    more than two arguments.  Explain why you wrote your scripts that way.
+
+
+Answer 2
+--------
+
+    (write your answer here)
+    My tests check what happens when the user gives more than two args.
+    Since the specs said "A calculator program takes 2 'tiny integers'." I interpreted that
+    any extra arg is an error. Becuase of that my test test_extra_arg.sh checks that the program 
+    prints an error message and exits with a non zero status.
+
+
+    I did this becasue when testing some of the files individually
+    I noticed wether I gave them too many args or too few , they printed
+    "NOT ENOUGH INPUT". Also the instructions from the assignment says
+    "A calculator program takes 2 'tiny integers'."  
+
